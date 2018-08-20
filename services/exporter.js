@@ -68,7 +68,7 @@ var exporter = function(config, db) {
     }, function(err) {
       console.log("All historical balances updated");
     });
-  }
+  };
   
   self.processLog = function(log, callback) {  
     log._id = log.blockNumber + "_" + log.transactionIndex + "_" + log.logIndex;
@@ -100,7 +100,7 @@ var exporter = function(config, db) {
         callback();
       });
     });    
-  }
+  };
   
   self.exportBalance = function(address, callback) {
     console.log("Exporting balance of", address);
@@ -117,9 +117,9 @@ var exporter = function(config, db) {
           callback();
       });
     });
-  }
+  };
   
   console.log("Exporter initialized, waiting for historical events...");
-}
+};
 
 module.exports = exporter;
